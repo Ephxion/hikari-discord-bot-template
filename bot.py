@@ -15,7 +15,6 @@ from utils.functions import array_to_string, codestring
 bot = lightbulb.BotApp(os.environ["TOKEN"], 
 prefix=",", 
 help_slash_command=True,
-default_enabled_guilds=int(os.environ["GUILD_ID"]), # You can do default_enabled_guild=(guild_id1, guild_id2, ...)
 case_insensitive_prefix_commands=True,
 intents=hikari.Intents.ALL
 )
@@ -68,10 +67,3 @@ if __name__ == "__main__":
 
         uvloop.install()
 
-bot.run(
-    activity=hikari.Activity(
-        type=hikari.ActivityType.WATCHING,
-        name=f'Monke swim for 10 hours',
-    ),
-    status=hikari.Status.DO_NOT_DISTURB,
-)
