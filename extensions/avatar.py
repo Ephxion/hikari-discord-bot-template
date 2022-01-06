@@ -22,7 +22,7 @@ async def userinfo(ctx: lightbulb.Context) -> None:
     embed = (
         hikari.Embed(
             title=f"{target.display_name}'s Avatar",
-            description=f"Get the full image\n[click here!]({target.avatar_url or target.default_avatar_url})",
+            description=f"**Get the full image**\n[click here!]({target.avatar_url or target.default_avatar_url})",
             colour=target.get_top_role().color
         )
         .set_image(target.avatar_url or target.default_avatar_url)
