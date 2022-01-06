@@ -71,7 +71,7 @@ if __name__ == "__main__":
 bot.run(
     activity=hikari.Activity(
         type=hikari.ActivityType.WATCHING,
-        name=f'Monke swim for 10 hours',
+        name=f'Monke swim for 10 hours :)',
     ),
     status=hikari.Status.DO_NOT_DISTURB
 )
