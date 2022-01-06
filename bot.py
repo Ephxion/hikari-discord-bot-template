@@ -28,6 +28,7 @@ async def on_starting(event: hikari.StartingEvent) -> None:
 async def on_stopping(event: hikari.StoppingEvent) -> None:
     await bot.d.aio_session.close()
 
+# General Error Handler
 @bot.listen(lightbulb.CommandErrorEvent)
 async def on_error(event: lightbulb.CommandErrorEvent) -> None:
     if isinstance(event.exception, lightbulb.CommandInvocationError):
@@ -53,25 +54,28 @@ async def on_error(event: lightbulb.CommandErrorEvent) -> None:
     else:
         raise exception
 
+# Command sample that returns the bot ping in ms.
 @bot.command
 @lightbulb.command("ping", description="The bot's ping")
 @lightbulb.implements(lightbulb.PrefixCommand)
 async def ping(ctx: lightbulb.Context) -> None:
     await ctx.respond(f"Pong! Latency: {bot.heartbeat_latency*1000:.2f}ms")
 
-
+# Load the extension from the extensions folder
 bot.load_extensions_from("./extensions/", must_exist=True)
 
+# Linux thing
 if __name__ == "__main__":
     if os.name != "nt":
         import uvloop
 
         uvloop.install()
 
+# Running the bot
 bot.run(
     activity=hikari.Activity(
         type=hikari.ActivityType.WATCHING,
-        name=f'Monke swim for 10 hours :)',
+        name=f'Monke swim for 10 hours :)'
     ),
     status=hikari.Status.DO_NOT_DISTURB
 )
