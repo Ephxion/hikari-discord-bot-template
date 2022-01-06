@@ -4,7 +4,7 @@ Hopefully you find this template helpfull in someway, thanks to Neon for the mai
 https://neonjonn.readthedocs.io/en/latest/hikari-get-started/lightbulb.html
 
 # Installation Guide
-First of all you can make a virtual enviroment(Optional, but recommended)
+First of all you can make a virtual enviroment if you want(Optional, but recommended)
 
 Windows:
 ```
