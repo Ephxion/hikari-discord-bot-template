@@ -17,7 +17,8 @@ prefix=",",
 help_slash_command=True,
 default_enabled_guilds=int(os.environ["GUILD_ID"]), # You can do default_enabled_guild=(guild_id1, guild_id2, ...)
 case_insensitive_prefix_commands=True,
-intents=hikari.Intents.ALL
+intents=hikari.Intents.ALL,
+help_class=None
 )
 
 @bot.listen()
